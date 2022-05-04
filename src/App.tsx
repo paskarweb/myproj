@@ -1,13 +1,13 @@
 import './App.css';
 import { Footer } from './Footer';
 
-
 const user = {
   userName: 'User1',
-  FirstName: '',
-  ShortBiography: '',
+  FirstName: 'Ivan',
+  ShortBiography: 'Back-End Developer. C#, Delphi, MSSQL, Oracle',
   PublicContacts: ''
 }
+
 const App = () => (
   <div className="App">
     <h1>Hello world - {user.userName}</h1>
