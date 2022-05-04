@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "myproj",
-=======
   "name": "react-for-beginners-itera",
->>>>>>> d17d243 (Initialize project using Create React App)
   "version": "0.1.0",
   "private": true,
   "dependencies": {
