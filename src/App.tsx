@@ -3,20 +3,24 @@ import { Footer } from './Footer';
 //import UsrData from "./data/userdata.json";
 import { AppUsrData } from './UserFC';
 import { Btn } from './Btn/BtnAlertMy';
-import { TickMy1 } from './TickClockMy'
-
+import { TickMy1 } from './TickClockMy';
 
 /*const user = {
   userName: 'User1'
 }*/
 //console.log(UsrData.FirstName);
 
+const HandleClick = () => (
+  //console.log('значение this:', new Date().toLocaleTimeString());  
+  alert('It is ' + new Date().toLocaleTimeString())
+)
+
 const App = () => (
   <div className="App-header">
     <h1>Hello user!</h1>
     <AppUsrData />
     <TickMy1 />
-    <Btn OnClick={(v) => alert(v)} />
+    <Btn OnClick={() => HandleClick()} text="Click alert" />
     <Footer copyright='copyright 01.05.2022' />
   </div>
 )
