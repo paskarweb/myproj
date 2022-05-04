@@ -6,7 +6,7 @@ const user = { userName: 'User1' }
 const App = () => (
   <div className="App">
     <h1>Hello world - {user.userName}</h1>
-    <Footer copyright='C' />
+    <Footer copyright='C 5' />
   </div>
 )
 
