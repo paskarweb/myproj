@@ -6,7 +6,8 @@ type BtnProps = {
 };
 
 export const Btn: FC<BtnProps> = ({ text, OnClick }) => (
-    <button className="btn btn-primary" type="button" onClick={OnClick}>
+    <button className="waves-effect waves-light btn  purple darken-1" type="button" onClick={OnClick}>
+        <i className="material-icons right">send</i>
         {text}
     </button>
 );

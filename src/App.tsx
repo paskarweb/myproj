@@ -4,6 +4,8 @@ import { Footer } from './Footer';
 import { AppUsrData } from './UserFC';
 import { Btn } from './Btn/BtnAlertMy';
 import { TickMy1 } from './TickClockMy';
+import { NavbarFC } from './components/Navbar';
+import { TodoForm } from './components/TodoForm';
 
 /*const user = {
   userName: 'User1'
@@ -16,14 +18,22 @@ const HandleClick = () => (
 )
 
 const App = () => (
-  <div className="App-header">
-    <h1>Hello user!</h1>
-    <AppUsrData />
-    <TickMy1 />
-    <Btn OnClick={() => HandleClick()} text="Click alert" />
-    <Footer copyright='copyright 01.05.2022' />
-  </div>
+  <>
+    <NavbarFC />
+    <div className="container">
+      <TodoForm />
+    </div>
+    <div className="App-header">
+      <h1>Hello user!</h1>
+      <AppUsrData />
+      <TickMy1 />
+      <Btn OnClick={() => HandleClick()} text="Click alert" />
+      <Footer copyright='copyright 01.05.2022' />
+    </div>
+  </>
 )
+
+
 
 //setInterval(TickMy1, 100);
 
