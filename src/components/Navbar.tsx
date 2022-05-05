@@ -6,7 +6,6 @@ export const NavbarFC = () => (
             <ul id="nav-mobile" className="left hide-on-med-and-down">
                 <li><a href="/">React Beginner</a></li>
                 <li><a href="/">Lessons</a></li>
-                <li><a href="/">Other</a></li>
             </ul>
         </div>
     </nav>
