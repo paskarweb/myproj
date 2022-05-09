@@ -31,19 +31,18 @@ const App = () => {
             <Route element={<TodosPage />} path="/" ></Route>
             <Route element={<AboutPage />} path="/about" ></Route>
           </Routes>
-
         </div>
-
-
-        <div className="App-header">
-          <h1>Hello user!</h1>
-          <AppUsrData />
-          <TickMy1 />
-          <Btn OnClick={() => HandleClick()} text="Click alert" />
-          <Footer copyright='copyright 01.05.2022' />
-        </div>
-
       </BrowserRouter>
+
+      <div className="App-header">
+        <h1>Hello user!</h1>
+        <AppUsrData />
+        <TickMy1 />
+        <Btn OnClick={() => HandleClick()} text="Click alert" />
+        <Footer copyright='copyright 01.05.2022' />
+      </div>
+
+
     </>
   )
 }
