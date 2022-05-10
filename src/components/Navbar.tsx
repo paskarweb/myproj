@@ -7,10 +7,16 @@ export const NavbarFC = () => (
             <a href="/" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
             <ul id="nav-mobile" className="left hide-on-med-and-down">
                 <li>
-                    <NavLink to="/">React Beginner</NavLink>
+                    <NavLink to="/">React Home</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/about">Lessons</NavLink>
+                    <NavLink to="/TodosInput">UseState Input</NavLink>
+                </li>
+                <li>
+                    <NavLink to="/about">Back-button</NavLink>
+                </li>
+                <li>
+                    <NavLink to="/clock">Clock</NavLink>
                 </li>
                 <li>
                     <NavLink to="/localstrorage">LocalStrorage</NavLink>
@@ -20,4 +26,4 @@ export const NavbarFC = () => (
     </nav>
 );
 
-export default () => NavbarFC;
+//export default () => NavbarFC;

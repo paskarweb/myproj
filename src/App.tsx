@@ -30,9 +30,10 @@ const App = () => {
         <NavbarFC />
         <div className="container">
           <Routes>
-            <Route element={<TodosPage />} path="/" ></Route>
+            <Route element={<TodosPage />} path="/TodosInput" ></Route>
             <Route element={<AboutPage />} path="/about" ></Route>
             <Route element={<FormInputText />} path="/localstrorage" ></Route>
+            <Route element={<TickMy1 />} path="/clock" ></Route>
           </Routes>
         </div>
       </BrowserRouter>
@@ -40,7 +41,6 @@ const App = () => {
       <div className="App-header">
         <h1>Hello user!</h1>
         <AppUsrData />
-        <TickMy1 />
         <Btn OnClick={() => HandleClick()} text="Click alert" />
         <Footer copyright='copyright 01.05.2022' />
       </div>
