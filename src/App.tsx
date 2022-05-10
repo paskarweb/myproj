@@ -8,6 +8,8 @@ import { NavbarFC } from './components/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { TodosPage } from './pages/TodosPage';
 import { AboutPage } from './pages/AboutPage';
+import FormInputText from './components/FormInputText';
+
 
 /*const user = {
   userName: 'User1'
@@ -30,6 +32,7 @@ const App = () => {
           <Routes>
             <Route element={<TodosPage />} path="/" ></Route>
             <Route element={<AboutPage />} path="/about" ></Route>
+            <Route element={<FormInputText />} path="/localstrorage" ></Route>
           </Routes>
         </div>
       </BrowserRouter>

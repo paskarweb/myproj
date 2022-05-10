@@ -12,9 +12,14 @@ export const TodosPage: React.FC = () => {
     //выводим массив из localStorage
     useEffect(() => {
         //если null, то передаем/парсим пустой массив || '[]'
+        //const saved = JSON.parse(localStorage.getItem('todos') || '[]') as ITodo[]
+        //setTodos(saved)
         const saved = JSON.parse(localStorage.getItem('todos') || '[]') as ITodo[]
-        setTodos(saved)
+        if (saved) {
+            setTodos(saved);
+        }
     }, [])
+
 
     //Сохраняем в localStorage
     useEffect(() => {

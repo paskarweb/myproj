@@ -12,6 +12,9 @@ export const NavbarFC = () => (
                 <li>
                     <NavLink to="/about">Lessons</NavLink>
                 </li>
+                <li>
+                    <NavLink to="/localstrorage">LocalStrorage</NavLink>
+                </li>
             </ul>
         </div>
     </nav>
