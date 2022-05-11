@@ -1,4 +1,5 @@
-import './App.css';
+//import './App.css';
+import styles from './App.module.css';
 import { Footer } from './Footer';
 //import UsrData from "./data/userdata.json";
 import { AppUsrData } from './UserFC';
@@ -28,7 +29,7 @@ const App = () => {
     <>
       <BrowserRouter>
         <NavbarFC />
-        <div className="container">
+        <div className={styles.container}>
           <Routes>
             <Route element={<TodosPage />} path="/TodosInput" ></Route>
             <Route element={<AboutPage />} path="/about" ></Route>
@@ -38,7 +39,7 @@ const App = () => {
         </div>
       </BrowserRouter>
 
-      <div className="App-header">
+      <div className={styles.homeContent}>
         <h1>Hello user!</h1>
         <AppUsrData />
         <Btn OnClick={() => HandleClick()} text="Click alert" />
