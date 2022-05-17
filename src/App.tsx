@@ -42,6 +42,7 @@ const App = () => {
       <div className={styles.homeContent}>
         <h1>Hello user!</h1>
         <AppUsrData />
+
         <Btn OnClick={() => HandleClick()} text="Click alert" />
         <Footer copyright='copyright 01.05.2022' />
       </div>
