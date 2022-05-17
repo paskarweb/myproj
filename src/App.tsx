@@ -10,6 +10,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { TodosPage } from './pages/TodosPage';
 import { AboutPage } from './pages/AboutPage';
 import FormInputText from './components/FormInputText';
+import { TimerCard, TimerDataCtx, TimerStateReducer } from './components/TimerV1';
+import { useReducer } from 'react';
 
 
 /*const user = {
@@ -24,6 +26,12 @@ const HandleClick = () => (
 
 const App = () => {
 
+  //for timer
+  const [timer, dispatchAction] = useReducer(TimerStateReducer, {
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  })
 
   return (
     <>
@@ -41,6 +49,11 @@ const App = () => {
 
       <div className={styles.homeContent}>
         <h1>Hello user!</h1>
+
+        <TimerDataCtx.Provider value={{ ...timer, dispatchAction }}>
+          <TimerCard />
+        </TimerDataCtx.Provider>
+
         <AppUsrData />
 
         <Btn OnClick={() => HandleClick()} text="Click alert" />
