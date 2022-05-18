@@ -10,6 +10,9 @@ export const NavbarFC = () => (
                     <NavLink to="/">React Home</NavLink>
                 </li>
                 <li>
+                    <NavLink to="/timer">Timer(context+reduce)</NavLink>
+                </li>
+                <li>
                     <NavLink to="/TodosInput">UseState Input</NavLink>
                 </li>
                 <li>

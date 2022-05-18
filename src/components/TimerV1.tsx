@@ -1,8 +1,7 @@
 import React, { useContext, useReducer } from 'react';
-import { useState, useEffect, createContext } from 'react';
-//import logo from './logo.svg';
+import { createContext } from 'react';
 
-export let intervalID: any;
+let intervalID: any; //иднентификатор метода старт таймера
 
 type TimerData = {
     hours: number;
@@ -16,7 +15,7 @@ const defaultTimerData: TimerData = {
     seconds: 0,
 }
 
-export type TimerDataState = TimerData & {
+type TimerDataState = TimerData & {
     //метод расширяем, принимает св-во data (тип TimerData) и возвращает void (ничего возвращаем)
     dispatchAction: (action: TimerDataAction) => void;
 }
@@ -35,7 +34,7 @@ type SetTimerStopAction = {
 type TimerDataAction = SetTimerStartAction | SetTimerStopAction;
 
 //Reducer - принимает Action (Событие) и возвращает State (состояние)
-export const TimerStateReducer = (
+const TimerStateReducer = (
     state: TimerData,
     action: TimerDataAction
 ): TimerData => {
@@ -55,26 +54,49 @@ export const TimerStateReducer = (
     }
 }
 
-export const TimerDataCtx = createContext<TimerDataState>({
+const TimerDataCtx = createContext<TimerDataState>({
     ...defaultTimerData,
     dispatchAction: () => { }
 });
 
 
-export const TimerCard = () => {
+const TimerCard = () => {
     const { hours, minutes, seconds, dispatchAction } = useContext(TimerDataCtx);
     return (
         <div>
-            <h2>Timer</h2>
             <div><h4>{hours} : {minutes} : {seconds} </h4>
-                <button onClick={() => intervalID = setInterval(() => dispatchAction({ type: 'SET_TIMER_START_ACTION', playload: 1 }), 1000)
-                }
+                <button
+                    className="btn"
+                    onClick={() => intervalID = setInterval(() => dispatchAction({ type: 'SET_TIMER_START_ACTION', playload: 1 }), 1000)
+                    }
                 >Start</button>
-                <button onClick={() => dispatchAction({ type: 'SET_TIMER_STOP_ACTION' })
-                }
+                <button
+                    className="btn"
+                    onClick={() => dispatchAction({ type: 'SET_TIMER_STOP_ACTION' })
+                    }
                 >Stop
                 </button>
             </div>
         </div>
+    )
+}
+
+//компонент
+export const TimerV1 = () => {
+    //---old--- const [employee, setEmployeeData] = useState({ salary: 100, onBench: true })
+    //---useReducer
+    //for timer
+    const [timer, dispatchAction] = useReducer(TimerStateReducer, {
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+    })
+    return (
+        < div >
+            <h3>Timer context+reduce</h3>
+            <TimerDataCtx.Provider value={{ ...timer, dispatchAction }}>
+                <TimerCard />
+            </TimerDataCtx.Provider>
+        </div >
     )
 }
